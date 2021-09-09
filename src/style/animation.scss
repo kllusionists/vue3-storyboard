@@ -1,0 +1,226 @@
+/* 定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除 */
+.k-enter-from {
+}
+/* 定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，*/
+/* 在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数 */
+.k-enter-active {
+}
+/* 定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 v-enter-from 被移除)，在过渡/动画完成之后移除 */
+.k-enter-to {
+}
+/* 定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除 */
+.k-leave-from {
+}
+/* 定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，*/
+/* 在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数 */
+.k-leave-active {
+}
+/* 离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 v-leave-from 被删除)，在过渡/动画完成之后移除 */
+.k-leave-to {
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 顶点左上角，顺时针90度旋转 rotate-clockwise */
+.rotate-clockwise-top-left-enter-active {
+  animation: rotate-clockwise-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-top-left-enter-to {
+  margin-top: -100vh;
+  transform-origin: top left;
+}
+.rotate-clockwise-top-left-leave-active {
+  animation: rotate-clockwise-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-top-left-leave-to {
+  transform-origin: top left;
+}
+
+/* 顶点右上角，顺时针90度旋转 rotate-clockwise */
+.rotate-clockwise-top-right-enter-active {
+  animation: rotate-clockwise-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-top-right-enter-to {
+  margin-top: -100vh;
+  transform-origin: top right;
+}
+.rotate-clockwise-top-right-leave-active {
+  animation: rotate-clockwise-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-top-right-leave-to {
+  transform-origin: top right;
+}
+
+/* 顶点左下角，顺时针90度旋转 rotate-clockwise */
+.rotate-clockwise-bottom-left-enter-active {
+  animation: rotate-clockwise-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-bottom-left-enter-to {
+  margin-top: -100vh;
+  transform-origin: bottom left;
+}
+.rotate-clockwise-bottom-left-leave-active {
+  animation: rotate-clockwise-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-bottom-left-leave-to {
+  transform-origin: bottom left;
+}
+
+/* 顶点右下角，顺时针90度旋转 rotate-clockwise */
+.rotate-clockwise-bottom-right-enter-active {
+  animation: rotate-clockwise-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-bottom-right-enter-to {
+  margin-top: -100vh;
+  transform-origin: bottom right;
+}
+.rotate-clockwise-bottom-right-leave-active {
+  animation: rotate-clockwise-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.rotate-clockwise-bottom-right-leave-to {
+  transform-origin: bottom right;
+}
+@keyframes rotate-clockwise-enter {
+  0% {
+    transform: rotate(-90deg);
+  }
+  50% {
+  }
+  100% {
+  }
+}
+@keyframes rotate-clockwise-leave {
+  0% {
+  }
+  50% {
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+/* 从左到右，transform-left-right */
+.transform-left-right-enter-active {
+  animation: transform-left-right-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.transform-left-right-enter-to {
+  margin-top: -100vh;
+}
+.transform-left-right-leave-active {
+  animation: transform-left-right-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+@keyframes transform-left-right-enter {
+  0% {
+    transform: translateX(-100vw);
+  }
+  50% {
+  }
+  100% {
+  }
+}
+@keyframes transform-left-right-leave {
+  0% {
+  }
+  50% {
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* 从右到左，transform-right-left */
+.transform-right-left-enter-active {
+  animation: transform-right-left-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.transform-right-left-enter-to {
+  margin-top: -100vh;
+}
+.transform-right-left-leave-active {
+  animation: transform-right-left-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+@keyframes transform-right-left-enter {
+  0% {
+    transform: translateX(100vw);
+  }
+  50% {
+  }
+  100% {
+  }
+}
+@keyframes transform-right-left-leave {
+  0% {
+  }
+  50% {
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+/* 从上到下，transform-top-bottom */
+.transform-top-bottom-enter-active {
+  animation: transform-top-bottom-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.transform-top-bottom-enter-to {
+  margin-bottom: 0;
+}
+.transform-top-bottom-leave-active {
+  animation: transform-top-bottom-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+@keyframes transform-top-bottom-enter {
+  0% {
+    transform: translateY(-200vh);
+  }
+  50% {
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes transform-top-bottom-leave {
+  0% {
+  }
+  50% {
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* 从下到上，transform-bottom-top */
+.transform-bottom-top-enter-active {
+  animation: transform-bottom-top-enter 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+.transform-bottom-top-enter-to {
+  margin-top: 0;
+}
+.transform-bottom-top-leave-active {
+  animation: transform-bottom-top-leave 1s cubic-bezier(0.35, -0.25, 0.65, 1.4);
+}
+@keyframes transform-bottom-top-enter {
+  0% {
+    transform: translateY(100vh);
+  }
+  50% {
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+@keyframes transform-bottom-top-leave {
+  0% {
+  }
+  50% {
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
