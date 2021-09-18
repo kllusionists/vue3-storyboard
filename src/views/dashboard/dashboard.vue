@@ -2,6 +2,7 @@
   <div class="dashboard">
     <img alt="Vue logo" src="@/assets/logo.png" />
     <HelloWorld msg="Hello Vue 3 + Vite" />
+    <div>{{ userInfo.name }}</div>
     <div @click="onClick">go to login</div>
   </div>
 </template>
@@ -47,6 +48,7 @@ export default {
   },
   mounted() {
     console.log(11111111111);
+    console.log(import.meta.env.VITE_APP_API);
   },
   methods: {},
   computed: {

@@ -44,23 +44,10 @@ const actions = {
   //     commit('setCartItems', { items: savedCartItems })
   //   }
   // },
-
-  // addProductToCart ({ state, commit }, product) {
-  //   commit('setCheckoutStatus', null)
-  //   if (product.inventory > 0) {
-  //     const cartItem = state.items.find(item => item.id === product.id)
-  //     if (!cartItem) {
-  //       commit('pushProductToCart', { id: product.id })
-  //     } else {
-  //       commit('incrementItemQuantity', cartItem)
-  //     }
-  //     // remove 1 item from stock
-  //     commit('products/decrementProductInventory', { id: product.id }, { root: true })
-  //   }
-  // }
 }
 
 export default {
+  // 开启命名空间，调用方法需要加上完整路径
   // namespaced: true,
   state,
   getters,
