@@ -12,6 +12,9 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from "@/components/HelloWorld.vue";
 import { useRouter } from "vue-router";
+import { getCurrentInstance, onMounted } from "vue";
+import { mapGetters } from "vuex";
+import { useStore } from "vuex";
 
 export default {
   components: {
@@ -22,26 +25,39 @@ export default {
       show: false,
     };
   },
-  setup(props) {
+  setup(props, context) {
+    const internalInstance = getCurrentInstance();
+    const store = useStore();
+
     const router = useRouter();
+    console.log(context);
 
     const onClick = () => {
+      store.commit("USER_INFO_UPDATE", { name: "KKK" });
+      console.log(store.getters.userInfo);
       router.push("/login");
     };
+
+    onMounted(() => {});
 
     // 暴露给 template
     return {
       onClick,
     };
   },
+  mounted() {
+    console.log(11111111111);
+  },
   methods: {},
+  computed: {
+    ...mapGetters(["userInfo"]),
+  },
 };
 </script>
 
 <style lang="scss" scope>
-  $color: red;
   .dashboard {
     height: 100%;
-    background-color: $color;
+    background-color: beige;
   }
 </style>

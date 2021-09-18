@@ -28,6 +28,7 @@ export default {
       goTest,
     };
   },
+  mounted() {},
   methods: {},
 };
 </script>
